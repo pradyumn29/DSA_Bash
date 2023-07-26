@@ -101,12 +101,12 @@ public class DoublyCircularLL {
     	else {
 	    	Node last=head;
 	    	
-	    	while(last!=null) {
+	    	do {
 	    		last=last.getNext();
 	    		count++;
-	    	}
+	    	}while(last!=head);
 		    	System.out.println("total no. of nodes are: "+count);
-		    	System.out.println();
+		    
     	}
     }
 }
