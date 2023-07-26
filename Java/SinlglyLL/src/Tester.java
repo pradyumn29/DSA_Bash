@@ -36,6 +36,11 @@ public class Tester {
 		list.Display();
 		System.out.println("no of nodes:"+list.Count());
 		
+		 System.out.println("----recursion---");
+	        list.reverseDisplay(list.getHead());
+	        System.out.println("\n---stack Reverse---");
+	        list.DisplayStackRev();
+		
 		
 	}
 

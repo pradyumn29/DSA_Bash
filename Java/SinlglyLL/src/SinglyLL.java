@@ -1,3 +1,4 @@
+import java.util.Stack;
 
 public class SinglyLL {
 
@@ -110,8 +111,7 @@ public class SinglyLL {
     	Node last=Head;
     	
     	while(last.getNext().getNext()!=null) {
-    	           last=last.getNext(); 
-    		
+    	      last=last.getNext(); 
     	}
     	
     	last.setNext(null);
@@ -155,6 +155,58 @@ public class SinglyLL {
     	return count;
     }
 	
-	
+    //----------------------------------------------------------------reverse display-------------------------------
+    
+    public void reverseDisplay(Node head) {
+    	if(head==null) {
+    	return;
+    	}
+    		reverseDisplay(head.getNext());
+    		System.out.print(head.getData()+" ");
+    	
+    	
+    }
+ //------------------------------------------------------Display Rev using Stack--------------------------------------   
+    public void DisplayStackRev() {
+    	Stack<Node> stack=new Stack<>();
+    	
+    	Node temp=Head;
+    	while(temp!=null) {
+    		stack.push(temp);
+    		temp=temp.getNext();
+    	}
+    	
+    	while(!stack.isEmpty()) {
+    		System.out.print(stack.pop().getData()+" ");
+    	
+    	}
+    	System.out.println();
+    	
+    }
+
+	public Node getHead() {
+		return Head;
+	}
+
+	public void setHead(Node head) {
+		Head = head;
+	}
+    
+	 //-------------------------------------------------------Reverse LinkedList-----------------------------------------------
+//  public void RevserveList(Node n1,Node n2,Node n3) {
+//  	
+//  }
+  
+  public void ReverseList(Node n1,Node n2) {
+  	
+  	if(n2==null) {
+  		Head.setNext(null);
+  		Head=n1;
+  		return;
+  	}
+  	
+  	ReverseList(n2,n2.getNext());
+  	n2.setNext(n1);
+  }
 	
 }
